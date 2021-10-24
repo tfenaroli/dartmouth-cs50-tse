@@ -7,7 +7,10 @@ pagedir.c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 #include "../libcs50/webpage.h"
+#include "../libcs50/file.h"
+
 
 // initializes pageDirectory
 bool pagedir_init(const char* pageDirectory) {
@@ -16,7 +19,7 @@ bool pagedir_init(const char* pageDirectory) {
     strcat(initialFileName, "/.crawler");
     FILE* fp = fopen(initialFileName, "w");
     if (fp == NULL) {
-        fprintf(stderr, "Error with pathDirectory, exiting non-zero\n");
+        fprintf(stderr, "error: couldn't open initial file, returning false\n");
         return false;
     }
     printf("added .crawler file to pageDirectory\n");
@@ -41,6 +44,34 @@ void pagedir_save(const webpage_t* page, const char* pageDirectory, const int do
         fclose(fp);
     }
     else {
-        printf("failed to open file %d\n", docID);
+        fprintf(stderr, "failed to open file %d\n", docID);
     }
+}
+
+// validates pageDirectory
+bool pagedir_validatedir(const char* pageDirectory) {
+    char crawlerFileName[100];
+    sprintf(crawlerFileName, "%s/.crawler", pageDirectory);
+    if(access(crawlerFileName, F_OK ) == 0 ) {
+        return true;
+    }
+    return false;
+}
+
+// creates webpage_t* from file
+webpage_t* pagedir_load(FILE* fp) {
+    char* url = file_readLine(fp);
+    char* depthString = file_readLine(fp);
+    int depth = atoi(depthString);
+    char* html = file_readFile(fp);
+
+    webpage_t* newPage = webpage_new(url, depth, html);
+
+    if (newPage == NULL) {
+        fprintf(stderr, "error: couldn't load new webpage from crawler-produced file, exiting non-zero\n");
+        exit(1);
+    }
+
+    free(depthString);
+    return newPage;
 }
