@@ -32,39 +32,24 @@ We anticipate the following modules or functions:
  2. *query*, which calls other functions and performs query
  3. *parseArgs*, which validates command-line arguments;
  4. *parseQuery*, which parses and validates query arguments
- 5. *generateScore*, which generates score for each word.
- 6. *getURL*, which gets URL from a docID file.
+ 5. *validateQuery*, which validates query arguments after they have been parsed
+ 6. *getURL*, which gets URL from a docID file
+ 7. *printResults*, which takes a counters object representing query results and scores, and prints them out in ranked order
+ 8. *intersectionQuery*, which makes a 'running product' (a counters object that represents the intersection of everything seen so far in the sequence)
+ 9. *unionQuery*, which makes a 'running sum' of andsequences
 
 And some helper modules that provide data structures:
 
  1. *index*, a module providing the data structure to represent the in-memory index, and functions to read and write index files;
  2. *counters*, a module providing the data structure to map docID to score;
 
- iterate through the counters
+ note: iterate through the counters
 
 ### Pseudo code for logic/algorithmic flow
 
-The indexer will run as follows:
+The querier will run as follows:
 
-    parse the command line, validate parameters, initialize other modules
-    call indexBuild, with pageDirectory
-
-where *indexBuild:*
-
-      creates a new 'index' object
-      loops over document ID numbers, counting from 1
-        loads a webpage from the document file 'pageDirectory/id'
-        if successful, 
-          passes the webpage and docID to indexPage
-
-where *indexPage:*
-
-     steps through each word of the webpage,
-       skips trivial words (less than length 3),
-       normalizes the word (converts to lower case),
-       looks up the word in the index,
-         adding the word to the index if needed
-       increments the count of occurrences of this word in this docID
+    main calls query, query loads index from indexFile into queryIndex index data structure, query calls parseArgs with argc and argv[] and returns bool, query takes stdin and calls parseQuery on query string and returns array of char* (clean query), query calls validateQuery with clean query and returns bool, query performs query with clean query on queryIndex using helper functions
 
 ### Major data structures
 
@@ -74,18 +59,7 @@ The *counters* is keyed by *docID* and stores a count of the number of occurrenc
 
 ### Testing plan
 
-*Unit testing*.  A program *indextest* will serve as a unit test for the *index* module; it reads an index file into the internal *index* data structure, then writes the index out to a new index file.
 
-*Integration testing*.  The *indexer*, as a complete program, will be tested by building an index from a pageDirectory, and then the resulting index will be validated by running it through the *indextest* to ensure it can be loaded.
-
-1. Test `indexer` with various invalid arguments.
-	2. no arguments
-	3. one argument
-	4. three or more arguments
-	5. invalid `pageDirectory` (non-existent path)
-	5. invalid `pageDirectory` (not a crawler directory)
-	6. invalid `indexFile` (non-existent path)
-	7. invalid `indexFile` (read-only directory)
-	7. invalid `indexFile` (existing, read-only file)
-0. Run *indexer* on a variety of pageDirectories and use *indextest* as one means of validating the resulting index.
-0. Run *valgrind* on both *indexer* and *indextest* to ensure no memory leaks or errors.
+1. Test *querier* with various invalid arguments and various invalid queries.
+2. Run *querier* on a variety of pageDirectories and indexFileNames.
+3. Run *valgrind* on  *querier* to ensure no memory leaks or errors.
