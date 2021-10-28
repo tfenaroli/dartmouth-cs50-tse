@@ -1,0 +1,46 @@
+./testing.sh
+testing with no arguments
+
+error: improper number of arguments, exiting non-zero
+-----------------------------------------------
+testing with one argument
+
+error: improper number of arguments, exiting non-zero
+-----------------------------------------------
+testing with three arguments
+
+error: improper number of arguments, exiting non-zero
+-----------------------------------------------
+testing with invalid pageDirectory (non-existent path)
+
+error: crawled pageDirectory not found, exiting non-zero
+-----------------------------------------------
+testing with invalid pageDirectory (not a crawler directory)
+
+error: crawled pageDirectory not found, exiting non-zero
+-----------------------------------------------
+testing with invalid indexFile (non-existent path)
+
+error: couldn't open index file, exiting non-zero
+-----------------------------------------------
+testing with invalid indexFile (read-only directory)
+
+error: couldn't open index file, exiting non-zero
+-----------------------------------------------
+testing with invalid indexFile (existing, read-only file)
+
+-----------------------------------------------
+testing with valid inputs
+
+-----------------------------------------------
+checking the result of indexer test on pages-toscrape-depth-1 with given func indexcmp... if nothing is printed, then indices are equivalent
+
+-----------------------------------------------
+create indextestresults.index with indextest.c using given file index-toscrape-1
+
+see if files are different using given func indexcmp... if nothing is printed, then indices are equivalent
+
+-----------------------------------------------
+valgrind shows no memory leaks or other errors on indextest or indexer
+
+-----------------------------------------------
