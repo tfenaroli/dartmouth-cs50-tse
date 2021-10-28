@@ -37,6 +37,11 @@ We anticipate the following modules or functions:
  7. *printResults*, which takes a counters object representing query results and scores, and prints them out in ranked order
  8. *intersectionQuery*, which makes a 'running product' (a counters object that represents the intersection of everything seen so far in the sequence)
  9. *unionQuery*, which makes a 'running sum' of andsequences
+ 10. *updateUnion*, which updates union
+ 11. *updateIntersection*, which updates intersection
+ 12. *updateMaxNode*, which updates maxNode
+ 13. *isOperator*, which returns true if input is an operator
+ 14. *getMin*, which returns minimum of two integers
 
 And some helper modules that provide data structures:
 

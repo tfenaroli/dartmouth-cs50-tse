@@ -198,6 +198,19 @@ Pseudocode:
     open file with that docID in pageDirectory
     return first line
 
+### getMin
+
+Given two integers, return smaller value.
+
+Pseudocode:
+
+    if (int1 is less than int2)
+        return int1
+    else if (int1 is greater than int2)
+        return int2
+    else
+        return int1
+
 ## Function prototypes
 
 ### query
@@ -215,6 +228,7 @@ void printResults(counters_t* result, char* pageDirectory);
 int tokenizeQuery(char* queryLine, char* words[]);
 counters_t* parseQuery(char* queryLine, index_t* queryIndex);
 bool isOperator(char* word);
+int getMin(int int1, int int2);
 int main(const int argc, char* argv[]);
 ```
 

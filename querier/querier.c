@@ -18,8 +18,13 @@ struct countersNode {
   int count;
 };
 
+typedef struct countersPair {
+  counters_t* countersIntersection;
+  counters_t* firstCounters;
+} countersPair_t;
+
 void unionQuery(counters_t* firstCounters, counters_t* secondCounters);
-void intersectionQuery(counters_t* firstCounters, counters_t* secondCounters);
+void intersectionQuery(countersPair_t* pairPointer, counters_t* secondCounters);
 void updateUnion(void* arg, const int key, const int count);
 void updateIntersection(void* arg, const int key, const int count);
 void updateMaxNode(void* arg, const int key, const int count);
@@ -31,14 +36,15 @@ void printResults(counters_t* result, char* pageDirectory);
 int tokenizeQuery(char* queryLine, char* words[]);
 counters_t* parseQuery(char* queryLine, index_t* queryIndex);
 bool isOperator(char* word);
+int getMin(int int1, int int2);
 int main(const int argc, char* argv[]);
 
 void unionQuery(counters_t* firstCounters, counters_t* secondCounters) {
     counters_iterate(secondCounters, firstCounters, &updateUnion);
 }
 
-void intersectionQuery(counters_t* firstCounters, counters_t* secondCounters) {
-    counters_iterate(secondCounters, firstCounters, &updateIntersection);
+void intersectionQuery(countersPair_t* pairPointer, counters_t* secondCounters) {
+    counters_iterate(secondCounters, pairPointer, &updateIntersection);
 }
 
 void updateUnion(void* arg, const int key, const int count) {
@@ -53,14 +59,11 @@ void updateUnion(void* arg, const int key, const int count) {
 }
 
 void updateIntersection(void* arg, const int key, const int count) {
-    counters_t* firstCounters = arg;
-    int firstCount = counters_get(firstCounters, key);
+    countersPair_t* pairPointer = arg;
+    int firstCount = counters_get(pairPointer->firstCounters, key);
     if (firstCount != 0) {
-        int min = firstCount;
-        if (count < firstCount) {
-            min = count;
-        }
-        counters_set(firstCounters, key, min);
+        int min = getMin(firstCount, count);
+        counters_set(pairPointer->countersIntersection, key, min);
     }
 }
 
@@ -109,12 +112,14 @@ void query(char* pageDirectory, char* indexFilename) {
     while ((line = file_readLine(stdin)) != NULL) {
         index_t* queryIndex = index_load(indexFilename);
         counters_t* resultCounters = parseQuery(line, queryIndex);
+        //free(line);
         if (resultCounters != NULL) {
             printResults(resultCounters, pageDirectory);
         }
         counters_delete(resultCounters);
         printf("\n\n\n");
         printf("Query: ");
+        index_delete(queryIndex);
     }
 }
 
@@ -230,25 +235,61 @@ counters_t* parseQuery(char* queryLine, index_t* queryIndex) {
     counters_t* countersUnion = counters_new();
     int i = 0;
     while (i < wordCount) {
-        if (isOperator(words[i])) {
-            i++;
-            continue;
+        printf("test\n");
+        counters_t* countersIntersection = counters_new();
+        counters_t* firstCounters = index_get(queryIndex, words[i]);
+        countersPair_t pair = {countersIntersection, firstCounters};
+        countersPair_t* pairPointer = &pair;
+        int j = 0;
+        while ((j < (wordCount - 1)) && (strcmp(words[i + 1], "and") == 0 || !isOperator(words[i + 1]))) {
+            printf("entered inner loop!\n");
+            //firstCounters = index_get(queryIndex, words[i]);
+            if (j > 0) {
+                printf("countersIntersection is: \n\n");
+                counters_print(countersIntersection, stdout);
+                pairPointer->firstCounters = pairPointer->countersIntersection;
+                counters_delete(pairPointer->countersIntersection);
+                pairPointer->countersIntersection = counters_new();
+                printf("firstCounters is: \n\n");
+                counters_print(pairPointer->firstCounters, stdout);
+            }
+            printf("reached if\n");
+            counters_t* secondCounters;
+            if (strcmp(words[j + 1], "and") == 0) {
+                secondCounters = index_get(queryIndex, words[j + 2]);
+                printf("inside if\n");
+                printf("first word is %s, second word is %s\n", words[j], words[j + 2]);
+                intersectionQuery(pairPointer, secondCounters);
+                printf("made it past intersectionQuery\n");
+                counters_print(pairPointer->countersIntersection, stdout);
+                j += 2;
+            }
+            else if (strcmp(words[j + 1], "or") != 0) {
+                secondCounters = index_get(queryIndex, words[j + 1]);
+                printf("inside else\n");
+                printf("first word is %s, second word is %s\n", words[j], words[j + 1]);
+                intersectionQuery(pairPointer, secondCounters);
+                j += 1;
+            }
+
+            printf("made it past if\n");
+            counters_print(countersIntersection, stdout);
+            printf("j is %d\n", j);
+            printf("wordCount is %d\n\n\n\n\n", wordCount);
+            //if (j >= (wordCount - 1)) break;
+            //counters_delete(secondCounters);
         }
-        counters_t* countersIntersection = index_get(queryIndex, words[i]);
-        // if (words[i + 1] != NULL) {
-        //     while (strcmp(words[i + 1], "and") == 0 || !isOperator(words[i + 1])) {
-        //         if (strcmp(words[i + 1], "and") == 0) {
-        //             intersectionQuery(countersIntersection, index_get(queryIndex, words[i + 2]));
-        //         }
-        //         else {
-        //             intersectionQuery(countersIntersection, index_get(queryIndex, words[i + 1]));
-        //         }
-        //         i++;
-        //     }
-        // }
-        unionQuery(countersUnion, countersIntersection);
-        counters_delete(countersIntersection);
-        i++;
+
+        if (i == 0 && j == 0) {
+            intersectionQuery(pairPointer, firstCounters);
+        }
+
+        counters_print(countersIntersection, stdout);
+
+        printf("made it out of loop\n");
+        unionQuery(countersUnion, pairPointer->countersIntersection);
+        //counters_delete(pairPointer->countersIntersection);
+        i += (j + 1);
     }
 
     i = 0;
@@ -264,6 +305,15 @@ bool isOperator(char* word) {
         return true;
     }
     return false;
+}
+
+int getMin(int int1, int int2) {
+    if (int1 <= int2) {
+        return int1;
+    }
+    else {
+        return int2;
+    }
 }
 
 int main (int argc, char* argv[]) {
