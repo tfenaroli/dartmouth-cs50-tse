@@ -6,7 +6,7 @@
 
 Recall the [Assignment](https://github.com/cs50spring2021/tse-labs/tree/main/querier).
 
-**Total: 82/100 points**
+**Total: 90/100 points**
 
 
 ## (10) Overall
@@ -44,19 +44,32 @@ Recall the [Assignment](https://github.com/cs50spring2021/tse-labs/tree/main/que
 24/30 points:
 
 * -1 Seg fault when dealing with non-readable index file
-* -5 Seg faults when given the following directories from the shared folder:
-
+* -3 Seg faults when given the following directories from the shared folder (due to whitespace):
 `letters-3`, `toscrape-2`, `wikipedia-1`
+
+This command works
+```
+./querier ~/cs50-dev/shared/tse/output/letters-3 ~/cs50-dev/shared/tse/output/letters-3.index < "valid_queries copy.txt"
+```
+
+This gives a core dump
+
+```./querier ~/cs50-dev/shared/tse/output/letters-3 ~/cs50-dev/shared/tse/output/letters-3.index < "valid_queries.txt"
+```
+
 
 ## (10) Memory leaks, according to valgrind
 
-0/10 points:
+6/10 points:
 
-* -4 Memory errors
-* -4 Lost memory blocks
-* -2 Still reachable memory blocks
+* -2 Memory errors
+* -2 Lost memory blocks
+
 
 ```
+valgrind --leak-check=full --show-leak-kinds=all ./querier ~/cs50-dev/shared/tse/output/toscrape-2 ~/cs50-dev/shared/tse/output/toscrape-2.index < "valid_queries.txt"
+
+
 ********************************************************************************
 *** Testing student solution memory management...
 ********************************************************************************
