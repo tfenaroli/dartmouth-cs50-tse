@@ -4,6 +4,7 @@ CS50
 querier.c
 */
 
+// inclusions
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -13,21 +14,20 @@ querier.c
 #include "../common/pagedir.h"
 #include "../libcs50/file.h"
 
+// countersNode struct
 struct countersNode {
   int key;
   int count;
 };
 
-typedef struct countersPair {
-  counters_t* countersIntersection;
-  counters_t* firstCounters;
-} countersPair_t;
-
+// function declarations
 void unionQuery(counters_t* firstCounters, counters_t* secondCounters);
-void intersectionQuery(countersPair_t* pairPointer, counters_t* secondCounters);
+counters_t* intersectionQuery(counters_t* firstCounters, counters_t* secondCounters);
 void updateUnion(void* arg, const int key, const int count);
 void updateIntersection(void* arg, const int key, const int count);
+void prepUpdateIntersection(void* arg, const int key, const int count);
 void updateMaxNode(void* arg, const int key, const int count);
+int getCountersSize(counters_t* counters);
 void updateCount(void* arg, const int key, const int count);
 char* getURL(int docID, char* pageDirectory);
 void query(char* pageDirectory, char* indexFilename);
@@ -39,14 +39,29 @@ bool isOperator(char* word);
 int getMin(int int1, int int2);
 int main(const int argc, char* argv[]);
 
+// performs union query
 void unionQuery(counters_t* firstCounters, counters_t* secondCounters) {
     counters_iterate(secondCounters, firstCounters, &updateUnion);
 }
 
-void intersectionQuery(countersPair_t* pairPointer, counters_t* secondCounters) {
-    counters_iterate(secondCounters, pairPointer, &updateIntersection);
+// performs intersection query
+counters_t* intersectionQuery(counters_t* firstCounters, counters_t* secondCounters) {
+    counters_t* intersectionCounters;
+    counters_t* iteratingCounters;
+    if (getCountersSize(firstCounters) <= getCountersSize(secondCounters)) {
+        intersectionCounters = firstCounters;
+        iteratingCounters = secondCounters;
+    }
+    else {
+        intersectionCounters = secondCounters;
+        iteratingCounters = firstCounters;
+    }
+    counters_iterate(intersectionCounters, iteratingCounters, &prepUpdateIntersection);
+    counters_iterate(iteratingCounters, intersectionCounters, &updateIntersection);
+    return intersectionCounters;
 }
 
+// updates union accordingly
 void updateUnion(void* arg, const int key, const int count) {
     counters_t* firstCounters = arg;
     int firstCount = counters_get(firstCounters, key);
@@ -58,15 +73,26 @@ void updateUnion(void* arg, const int key, const int count) {
     }
 }
 
-void updateIntersection(void* arg, const int key, const int count) {
-    countersPair_t* pairPointer = arg;
-    int firstCount = counters_get(pairPointer->firstCounters, key);
-    if (firstCount != 0) {
-        int min = getMin(firstCount, count);
-        counters_set(pairPointer->countersIntersection, key, min);
+// prepares counters for intersection update
+void prepUpdateIntersection(void* arg, const int key, const int count) {
+    counters_t* iteratingCounters = arg;
+    int get = counters_get(iteratingCounters, key);
+    if (get == 0) {
+        counters_set(iteratingCounters, key, 0);
     }
 }
 
+// updates intersection accordingly
+void updateIntersection(void* arg, const int key, const int count) {
+    counters_t* intersectionCounters = arg;
+    int firstCount = counters_get(intersectionCounters, key);
+    if (firstCount != 0) {
+        int min = getMin(firstCount, count);
+        counters_set(intersectionCounters, key, min);
+    }
+}
+
+// updates the node with the maximum count
 void updateMaxNode(void* arg, const int key, const int count) {
     if (arg != NULL) {
         struct countersNode* maxNodePointer = arg;
@@ -77,6 +103,7 @@ void updateMaxNode(void* arg, const int key, const int count) {
     }
 }
 
+// updates count of counters nodes
 void updateCount(void* arg, const int key, const int count) {
     int* itemCount = arg;
 
@@ -85,6 +112,7 @@ void updateCount(void* arg, const int key, const int count) {
     }
 }
 
+// gets URL from a docID file
 char* getURL(int docID, char* pageDirectory) {
     char fileName[100];
     sprintf(fileName, "%s/%d", pageDirectory, docID);
@@ -101,9 +129,10 @@ char* getURL(int docID, char* pageDirectory) {
     }
 }
 
+// performs query
 void query(char* pageDirectory, char* indexFilename) {
     if (!parseArgs(pageDirectory, indexFilename)) {
-        fprintf(stderr, "error parsing arguments, exiting non-zero\n");
+        fprintf(stderr, "error: couldn't parse arguments, exiting non-zero\n");
         exit(1);
     }
 
@@ -112,7 +141,7 @@ void query(char* pageDirectory, char* indexFilename) {
     while ((line = file_readLine(stdin)) != NULL) {
         index_t* queryIndex = index_load(indexFilename);
         counters_t* resultCounters = parseQuery(line, queryIndex);
-        //free(line);
+        free(line);
         if (resultCounters != NULL) {
             printResults(resultCounters, pageDirectory);
         }
@@ -123,6 +152,14 @@ void query(char* pageDirectory, char* indexFilename) {
     }
 }
 
+// gets countersSize
+int getCountersSize(counters_t* counters) {
+    int itemCount = 0;
+    counters_iterate(counters, &itemCount, &updateCount);
+    return itemCount;
+}
+
+// parses command-line arguments
 bool parseArgs(char* pageDirectory, char* indexFilename) {
     if (!pagedir_validatedir(pageDirectory)) {
         return false;
@@ -130,12 +167,14 @@ bool parseArgs(char* pageDirectory, char* indexFilename) {
     FILE* fp = fopen(indexFilename, "r");
     if (fp == NULL) {
         fclose(fp);
-        return false;
+        fprintf(stderr, "error: couldn't parse arguments, exiting non-zero\n");
+        exit(1);
     }
     fclose(fp);
     return true;
 }
 
+// prints results from query
 void printResults(counters_t* result, char* pageDirectory) {
     int itemCount = 0;
     counters_iterate(result, &itemCount, &updateCount);
@@ -166,7 +205,7 @@ void printResults(counters_t* result, char* pageDirectory) {
     }
 }
 
-// have to free normalizedWord somewhere
+// tokenizes query
 int tokenizeQuery(char* queryLine, char* words[]) {
     char* word = queryLine;
     char* rest;
@@ -197,6 +236,7 @@ int tokenizeQuery(char* queryLine, char* words[]) {
     return wordCount;
 }
 
+// parses query
 counters_t* parseQuery(char* queryLine, index_t* queryIndex) {
     for (int i = 0; i < strlen(queryLine); i++) {
         if (isalpha(queryLine[i]) == 0 && isspace(queryLine[i]) == 0) {
@@ -233,73 +273,28 @@ counters_t* parseQuery(char* queryLine, index_t* queryIndex) {
     }
 
     counters_t* countersUnion = counters_new();
-    int i = 0;
-    while (i < wordCount) {
-        printf("test\n");
-        counters_t* countersIntersection = counters_new();
-        counters_t* firstCounters = index_get(queryIndex, words[i]);
-        countersPair_t pair = {countersIntersection, firstCounters};
-        countersPair_t* pairPointer = &pair;
-        int j = 0;
-        while ((j < (wordCount - 1)) && (strcmp(words[i + 1], "and") == 0 || !isOperator(words[i + 1]))) {
-            printf("entered inner loop!\n");
-            //firstCounters = index_get(queryIndex, words[i]);
-            if (j > 0) {
-                printf("countersIntersection is: \n\n");
-                counters_print(countersIntersection, stdout);
-                pairPointer->firstCounters = pairPointer->countersIntersection;
-                counters_delete(pairPointer->countersIntersection);
-                pairPointer->countersIntersection = counters_new();
-                printf("firstCounters is: \n\n");
-                counters_print(pairPointer->firstCounters, stdout);
-            }
-            printf("reached if\n");
-            counters_t* secondCounters;
-            if (strcmp(words[j + 1], "and") == 0) {
-                secondCounters = index_get(queryIndex, words[j + 2]);
-                printf("inside if\n");
-                printf("first word is %s, second word is %s\n", words[j], words[j + 2]);
-                intersectionQuery(pairPointer, secondCounters);
-                printf("made it past intersectionQuery\n");
-                counters_print(pairPointer->countersIntersection, stdout);
-                j += 2;
-            }
-            else if (strcmp(words[j + 1], "or") != 0) {
-                secondCounters = index_get(queryIndex, words[j + 1]);
-                printf("inside else\n");
-                printf("first word is %s, second word is %s\n", words[j], words[j + 1]);
-                intersectionQuery(pairPointer, secondCounters);
-                j += 1;
-            }
-
-            printf("made it past if\n");
-            counters_print(countersIntersection, stdout);
-            printf("j is %d\n", j);
-            printf("wordCount is %d\n\n\n\n\n", wordCount);
-            //if (j >= (wordCount - 1)) break;
-            //counters_delete(secondCounters);
+    counters_t* countersIntersection = index_get(queryIndex, words[0]);
+    for (int i = 1; i < wordCount; i++) {
+        if (strcmp(words[i], "or") == 0) {
+            unionQuery(countersUnion, countersIntersection);
+            countersIntersection = counters_new();
+            countersIntersection = index_get(queryIndex, words[i + 1]);
+            i++;
         }
-
-        if (i == 0 && j == 0) {
-            intersectionQuery(pairPointer, firstCounters);
+        else if (!isOperator(words[i])) {
+            countersIntersection = intersectionQuery(countersIntersection, index_get(queryIndex, words[i]));
         }
-
-        counters_print(countersIntersection, stdout);
-
-        printf("made it out of loop\n");
-        unionQuery(countersUnion, pairPointer->countersIntersection);
-        //counters_delete(pairPointer->countersIntersection);
-        i += (j + 1);
     }
 
-    i = 0;
-    while (i < wordCount) {
+    unionQuery(countersUnion, countersIntersection);
+
+    for (int i = 0; i < wordCount; i++) {
         free(words[i]);
-        i++;
     }
     return countersUnion;
 }
 
+// determines if word is an operator ("and" or "or")
 bool isOperator(char* word) {
     if (strcmp(word, "and") == 0 || strcmp(word, "or") == 0) {
         return true;
@@ -307,6 +302,7 @@ bool isOperator(char* word) {
     return false;
 }
 
+// gets the minimum value of two integers
 int getMin(int int1, int int2) {
     if (int1 <= int2) {
         return int1;
@@ -316,6 +312,7 @@ int getMin(int int1, int int2) {
     }
 }
 
+// main function
 int main (int argc, char* argv[]) {
     if (argc != 3) {
         fprintf(stderr, "error: improper number of arguments, exiting non-zero\n");

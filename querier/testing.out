@@ -1,0 +1,92 @@
+testing with no arguments
+
+error: improper number of arguments, exiting non-zero
+-----------------------------------------------
+testing with one argument
+
+error: improper number of arguments, exiting non-zero
+-----------------------------------------------
+testing with three arguments
+
+error: improper number of arguments, exiting non-zero
+-----------------------------------------------
+testing with invalid pageDirectory (non-existent path)
+
+error: couldn't parse arguments, exiting non-zero
+-----------------------------------------------
+testing with invalid pageDirectory (not a crawler directory)
+
+error: couldn't parse arguments, exiting non-zero
+-----------------------------------------------
+testing with valid inputs and valid queries
+
+Query: here is tokenized query:
+home 
+
+docID: 1, score: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/
+docID: 3, score: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+docID: 2, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+docID: 4, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+docID: 5, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+docID: 6, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+docID: 7, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+
+
+
+Query: -----------------------------------------------
+-----------------------------------------------
+Query: here is tokenized query:
+home and the 
+
+docID: 1, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/
+docID: 3, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+
+
+
+Query: -----------------------------------------------
+-----------------------------------------------
+Query: here is tokenized query:
+biology or the 
+
+docID: 7, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+docID: 1, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/
+docID: 3, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+
+
+
+Query: -----------------------------------------------
+-----------------------------------------------
+Query: here is tokenized query:
+biology and home and playground 
+
+no documents match the query
+
+
+
+Query: -----------------------------------------------
+-----------------------------------------------
+Query: here is tokenized query:
+powerful or dog and cat and mouse or himalayas or woman 
+
+docID: 15, score: 17, URL: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-coming-woman-a-novel-based-on-the-life-of-the-infamous-feminist-victoria-woodhull_993/index.html
+docID: 3, score: 4, URL: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/its-only-the-himalayas_981/index.html
+docID: 1, score: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/toscrape/
+docID: 73, score: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books_1/index.html
+docID: 74, score: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/toscrape/index.html
+docID: 12, score: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/starving-hearts-triangular-trade-trilogy-1_990/index.html
+docID: 17, score: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-requiem-red_995/index.html
+docID: 72, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/travel_2/index.html
+docID: 9, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/scott-pilgrims-precious-little-life-scott-pilgrim-1_987/index.html
+docID: 10, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/set-me-free_988/index.html
+docID: 11, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/shakespeares-sonnets_989/index.html
+docID: 13, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-black-maria_991/index.html
+docID: 14, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-boys-in-the-boat-nine-americans-and-their-epic-quest-for-gold-at-the-1936-berlin-olympics_992/index.html
+docID: 41, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/food-and-drink_33/index.html
+docID: 59, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/default_15/index.html
+
+
+
+Query: -----------------------------------------------
+valgrind shows no memory leaks or other errors on querier, except for a few queries (mentioned in README.md file)
+
+-----------------------------------------------

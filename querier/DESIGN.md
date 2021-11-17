@@ -39,9 +39,12 @@ We anticipate the following modules or functions:
  9. *unionQuery*, which makes a 'running sum' of andsequences
  10. *updateUnion*, which updates union
  11. *updateIntersection*, which updates intersection
- 12. *updateMaxNode*, which updates maxNode
- 13. *isOperator*, which returns true if input is an operator
- 14. *getMin*, which returns minimum of two integers
+ 12. *prepUpdateIntersection*, which preps for intersection update
+ 13. *updateMaxNode*, which updates maxNode
+ 14. *getCountersSize*, which returns counters' size
+ 15. *isOperator*, which returns true if input is an operator
+ 16. *getMin*, which returns minimum of two integers
+ 17. *updateCount*, which updates counters' count
 
 And some helper modules that provide data structures:
 

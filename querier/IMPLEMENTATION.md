@@ -2,7 +2,6 @@
 ## Implementation Spec
 
 In this document we reference the [Requirements Specification](REQUIREMENTS.md) and [Design Specification](DESIGN.md) and focus on the implementation-specific decisions.
-The knowledge unit noted that an [implementation spec](https://github.com/CS50Dartmouth21FS1/home/blob/fall21s1/knowledge/units/design.md#implementation-spec) may include many topics; not all are relevant to the TSE or the Crawler.
 
 ## Data structures 
 
@@ -48,18 +47,7 @@ Pseudocode:
     if (two operators are adjacent)
         error and ask for next query
     make a new counters with name countersUnion
-    make an int index = 0
-    while (index in char* words[] is not a NULL pointer)
-        if (index in char* words[] is an operator)
-            increment index
-            continue (jump back to the beginning of the loop)
-        make a new counters with name countersIntersection and set equal to current word's counters
-        while (index + 1 in char* words[] is an and or a non-operator word)
-            call intersectionQuery on countersIntersection and next non-operator word's counters
-            increment index
-        call unionQuery on countersUnion and countersIntersection
-        delete countersIntersection
-        increment index
+    loop through words and call unionQuery and unionIntersection accordingly (left-associative)
     return countersUnion
 
 ### printResults
@@ -89,6 +77,16 @@ Pseudocode:
         set struct countersNode* maxNode = arg
         if (count > maxNode->count)
             set maxNode count to count and maxNode key to key
+
+### getCountersSize
+
+Given counters, return size.
+
+Pseudocode:
+
+    int itemCount is 0
+    counters_iterate(counters, &itemCount, &updateCount)
+    return itemCount
 
 ### tokenizeQuery
 
@@ -179,6 +177,18 @@ Pseudocode:
             set min to count
         counters_set(first counters, key, count)
 
+### prepUpdateIntersection
+
+Given first counters, second counters key, secound counters count, alter first one to prep for update intersection of both
+
+Pseudocode:
+
+    counters_t* iteratingCounters is arg
+    int get is counters_get(iteratingCounters, key)
+    if (get is 0) {
+        counters_set(iteratingCounters, key, 0)
+    }
+
 ### updateCount
 
 Given itemCount, key, count, increment count of items
@@ -217,10 +227,13 @@ Pseudocode:
 
 ```c
 void unionQuery(counters_t* firstCounters, counters_t* secondCounters);
-void intersectionQuery(counters_t* firstCounters, counters_t* secondCounters);
+counters_t* intersectionQuery(counters_t* firstCounters, counters_t* secondCounters);
 void updateUnion(void* arg, const int key, const int count);
 void updateIntersection(void* arg, const int key, const int count);
+void prepUpdateIntersection(void* arg, const int key, const int count);
 void updateMaxNode(void* arg, const int key, const int count);
+int getCountersSize(counters_t* counters);
+void updateCount(void* arg, const int key, const int count);
 char* getURL(int docID, char* pageDirectory);
 void query(char* pageDirectory, char* indexFilename);
 bool parseArgs(char* pageDirectory, char* indexFilename);
@@ -234,7 +247,7 @@ int main(const int argc, char* argv[]);
 
 ## Error handling and recovery
 
-Print errors to standard error and exit non-zero. For query errors, wait for next query.
+Print errors to standard error and exit non-zero. For query errors, ask for next query.
 
 ## Testing plan
 
