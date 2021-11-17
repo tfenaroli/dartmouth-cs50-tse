@@ -135,11 +135,11 @@ void query(char* pageDirectory, char* indexFilename) {
         fprintf(stderr, "error: couldn't parse arguments, exiting non-zero\n");
         exit(1);
     }
+    index_t* queryIndex = index_load(indexFilename);
 
     char* line;
     printf("Query: ");
     while ((line = file_readLine(stdin)) != NULL) {
-        index_t* queryIndex = index_load(indexFilename);
         counters_t* resultCounters = parseQuery(line, queryIndex);
         free(line);
         if (resultCounters != NULL) {

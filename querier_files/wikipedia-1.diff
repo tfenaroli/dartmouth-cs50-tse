@@ -1,0 +1,113 @@
+1,112d0
+< Query: dartmouth 
+< Matches 3 documents (ranked):
+< score 416 doc   4: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dartmouth_College.html
+< score   1 doc   1: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/index.html
+< score   1 doc   7: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Computer_science.html
+< -----------------------------------------------
+< Query: dartmouth 
+< Matches 3 documents (ranked):
+< score 416 doc   4: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dartmouth_College.html
+< score   1 doc   1: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/index.html
+< score   1 doc   7: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Computer_science.html
+< -----------------------------------------------
+< Query: dartmouth 
+< Matches 3 documents (ranked):
+< score 416 doc   4: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dartmouth_College.html
+< score   1 doc   1: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/index.html
+< score   1 doc   7: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Computer_science.html
+< -----------------------------------------------
+< Query: lab 
+< No documents match.
+< -----------------------------------------------
+< Query: dartmouth college 
+< Matches 3 documents (ranked):
+< score 242 doc   4: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dartmouth_College.html
+< score   1 doc   1: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/index.html
+< score   1 doc   7: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Computer_science.html
+< -----------------------------------------------
+< Query: dartmouth college 
+< Matches 3 documents (ranked):
+< score 242 doc   4: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dartmouth_College.html
+< score   1 doc   1: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/index.html
+< score   1 doc   7: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Computer_science.html
+< -----------------------------------------------
+< Query: dartmouth and college 
+< Matches 3 documents (ranked):
+< score 242 doc   4: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dartmouth_College.html
+< score   1 doc   1: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/index.html
+< score   1 doc   7: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Computer_science.html
+< -----------------------------------------------
+< Query: dartmouth and college 
+< Matches 3 documents (ranked):
+< score 242 doc   4: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dartmouth_College.html
+< score   1 doc   1: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/index.html
+< score   1 doc   7: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Computer_science.html
+< -----------------------------------------------
+< Query: dartmouth college and computer science 
+< Matches 3 documents (ranked):
+< score   5 doc   4: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dartmouth_College.html
+< score   1 doc   1: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/index.html
+< score   1 doc   7: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Computer_science.html
+< -----------------------------------------------
+< Query: dartmouth college or computer science 
+< Matches 6 documents (ranked):
+< score 247 doc   4: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dartmouth_College.html
+< score 171 doc   7: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Computer_science.html
+< score   4 doc   2: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Linked_list.html
+< score   4 doc   3: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hash_table.html
+< score   2 doc   1: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/index.html
+< score   1 doc   6: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/C_(programming_language).html
+< -----------------------------------------------
+< Query: dartmouth and college and computer and science 
+< Matches 3 documents (ranked):
+< score   5 doc   4: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dartmouth_College.html
+< score   1 doc   1: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/index.html
+< score   1 doc   7: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Computer_science.html
+< -----------------------------------------------
+< Query: dartmouth and college or computer and science 
+< Matches 6 documents (ranked):
+< score 247 doc   4: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dartmouth_College.html
+< score 171 doc   7: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Computer_science.html
+< score   4 doc   2: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Linked_list.html
+< score   4 doc   3: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hash_table.html
+< score   2 doc   1: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/index.html
+< score   1 doc   6: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/C_(programming_language).html
+< -----------------------------------------------
+< Query: dartmouth or computer science or programming or unix or doug mcilroy 
+< Matches 7 documents (ranked):
+< score 422 doc   4: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dartmouth_College.html
+< score 222 doc   5: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Unix.html
+< score 195 doc   7: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Computer_science.html
+< score  93 doc   6: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/C_(programming_language).html
+< score  13 doc   2: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Linked_list.html
+< score  10 doc   3: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hash_table.html
+< score   4 doc   1: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/index.html
+< -----------------------------------------------
+< Query: europe and travel 
+< No documents match.
+< -----------------------------------------------
+< Query: european travel 
+< No documents match.
+< -----------------------------------------------
+< Query: france and spain 
+< Matches 1 documents (ranked):
+< score   1 doc   7: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Computer_science.html
+< -----------------------------------------------
+< Query: france or spain 
+< Matches 1 documents (ranked):
+< score   2 doc   7: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Computer_science.html
+< -----------------------------------------------
+< Query: members and health 
+< Matches 1 documents (ranked):
+< score   2 doc   4: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dartmouth_College.html
+< -----------------------------------------------
+< Query: england or british and freedom and uses or arabian or universal and brady 
+< Matches 2 documents (ranked):
+< score   9 doc   4: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dartmouth_College.html
+< score   1 doc   6: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/C_(programming_language).html
+< -----------------------------------------------
+< Query: ccd and homme or cheap and hero or sunset and sunrise or china 
+< Matches 1 documents (ranked):
+< score   1 doc   4: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dartmouth_College.html
+< -----------------------------------------------

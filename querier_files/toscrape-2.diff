@@ -1,0 +1,110 @@
+1,109d0
+< Query: dartmouth 
+< No documents match.
+< -----------------------------------------------
+< Query: dartmouth 
+< No documents match.
+< -----------------------------------------------
+< Query: dartmouth 
+< No documents match.
+< -----------------------------------------------
+< Query: lab 
+< Matches 8 documents (ranked):
+< score   8 doc 203: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/lab-girl_595/index.html
+< score   1 doc 196: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/autobiography_27/index.html
+< score   1 doc 197: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/a-heartbreaking-work-of-staggering-genius_115/index.html
+< score   1 doc 198: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/life-without-a-recipe_188/index.html
+< score   1 doc 199: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/lust-wonder_191/index.html
+< score   1 doc 200: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/me-talk-pretty-one-day_193/index.html
+< score   1 doc 201: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/running-with-scissors_215/index.html
+< score   1 doc 202: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/approval-junkie-adventures-in-caring-too-much_363/index.html
+< -----------------------------------------------
+< Query: dartmouth college 
+< No documents match.
+< -----------------------------------------------
+< Query: dartmouth college 
+< No documents match.
+< -----------------------------------------------
+< Query: dartmouth and college 
+< No documents match.
+< -----------------------------------------------
+< Query: dartmouth and college 
+< No documents match.
+< -----------------------------------------------
+< Query: dartmouth college and computer science 
+< No documents match.
+< -----------------------------------------------
+< Query: dartmouth college or computer science 
+< Matches 1 documents (ranked):
+< score   4 doc 380: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/algorithms-to-live-by-the-computer-science-of-human-decisions_880/index.html
+< -----------------------------------------------
+< Query: dartmouth and college and computer and science 
+< No documents match.
+< -----------------------------------------------
+< Query: dartmouth and college or computer and science 
+< Matches 1 documents (ranked):
+< score   4 doc 380: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/algorithms-to-live-by-the-computer-science-of-human-decisions_880/index.html
+< -----------------------------------------------
+< Query: dartmouth or computer science or programming or unix or doug mcilroy 
+< Matches 1 documents (ranked):
+< score   4 doc 380: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/algorithms-to-live-by-the-computer-science-of-human-decisions_880/index.html
+< -----------------------------------------------
+< Query: europe and travel 
+< Matches 8 documents (ranked):
+< score   3 doc 575: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/neither-here-nor-there-travels-in-europe_198/index.html
+< score   1 doc  91: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-travelers_285/index.html
+< score   1 doc 573: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/travel_2/index.html
+< score   1 doc 574: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/1000-places-to-see-before-you-die_1/index.html
+< score   1 doc 576: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-road-to-little-dribbling-adventures-of-an-american-in-britain-notes-from-a-small-island-2_277/index.html
+< score   1 doc 577: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/a-year-in-provence-provence-1_421/index.html
+< score   1 doc 578: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-great-railway-bazaar_446/index.html
+< score   1 doc 579: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/a-summer-in-europe_458/index.html
+< -----------------------------------------------
+< Query: european travel 
+< No documents match.
+< -----------------------------------------------
+< Query: france and spain 
+< No documents match.
+< -----------------------------------------------
+< Query: france or spain 
+< Matches 15 documents (ranked):
+< score   4 doc 543: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-constant-princess-the-tudor-court-1_493/index.html
+< score   2 doc  42: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/soumission_998/index.html
+< score   2 doc  71: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/all-the-light-we-cannot-see_660/index.html
+< score   2 doc 459: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/i-had-a-nice-time-and-other-lies-how-to-find-love-sht-like-that_814/index.html
+< score   2 doc 540: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-passion-of-dolssa_351/index.html
+< score   2 doc 545: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/a-paris-apartment_612/index.html
+< score   2 doc 548: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-marriage-of-opposites_759/index.html
+< score   1 doc 101: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/benjamin-franklin-an-american-life_460/index.html
+< score   1 doc 127: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/32-yolks_510/index.html
+< score   1 doc 143: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/my-paris-kitchen-recipes-and-stories_910/index.html
+< score   1 doc 312: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/code-name-verity-code-name-verity-1_680/index.html
+< score   1 doc 441: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/private-paris-private-10_958/index.html
+< score   1 doc 544: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/lilac-girls_597/index.html
+< score   1 doc 187: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/dress-your-family-in-corduroy-and-denim_562/index.html
+< score   1 doc 574: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/1000-places-to-see-before-you-die_1/index.html
+< -----------------------------------------------
+< Query: members and health 
+< No documents match.
+< -----------------------------------------------
+< Query: england or british and freedom and uses or arabian or universal and brady 
+< Matches 14 documents (ranked):
+< score   6 doc 317: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-white-queen-the-cousins-war-1_768/index.html
+< score   4 doc 543: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-constant-princess-the-tudor-court-1_493/index.html
+< score   3 doc 104: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/louisa-the-extraordinary-life-of-mrs-adams_818/index.html
+< score   3 doc 576: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-road-to-little-dribbling-adventures-of-an-american-in-britain-notes-from-a-small-island-2_277/index.html
+< score   3 doc  17: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/aladdin-and-his-wonderful-lamp_973/index.html
+< score   2 doc 414: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/once-was-a-time_724/index.html
+< score   2 doc 571: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/a-murder-in-time_877/index.html
+< score   2 doc 424: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/i-am-pilgrim-pilgrim-1_703/index.html
+< score   1 doc  16: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/worlds-elsewhere-journeys-around-shakespeares-globe_972/index.html
+< score   1 doc 101: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/benjamin-franklin-an-american-life_460/index.html
+< score   1 doc 155: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/brilliant-beacons-a-history-of-the-american-lighthouse_515/index.html
+< score   1 doc 267: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/library-of-souls-miss-peregrines-peculiar-children-3_816/index.html
+< score   1 doc 305: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-midnight-watch-a-novel-of-the-titanic-and-the-californian_640/index.html
+< score   1 doc 370: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/kill-em-and-leave-searching-for-james-brown-and-the-american-soul_528/index.html
+< -----------------------------------------------
+< Query: ccd and homme or cheap and hero or sunset and sunrise or china 
+< Matches 1 documents (ranked):
+< score   1 doc 574: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/1000-places-to-see-before-you-die_1/index.html
+< -----------------------------------------------

@@ -1,0 +1,276 @@
+1,105c1,168
+< Query: search and biology 
+< No documents match.
+< -----------------------------------------------
+< Query: tse or for breadth or the first 
+< Matches 2 documents (ranked):
+< score   1 doc   1: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+< score   1 doc   3: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+< -----------------------------------------------
+< Query: tse this or biology 
+< Matches 2 documents (ranked):
+< score   1 doc   1: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+< score   1 doc   6: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+< -----------------------------------------------
+< Query: answers search page or home or mississippians or computational 
+< Matches 6 documents (ranked):
+< score   2 doc   1: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+< score   2 doc   6: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+< score   1 doc   2: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+< score   1 doc   3: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+< score   1 doc   4: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+< score   1 doc   5: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+< -----------------------------------------------
+< Query: breadth or eniac this page and computational or eniac 
+< Matches 2 documents (ranked):
+< score   1 doc   3: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+< score   1 doc   4: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+< -----------------------------------------------
+< Query: algorithm playground computational computational or for 
+< Matches 6 documents (ranked):
+< score   1 doc   2: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+< score   1 doc   1: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+< score   1 doc   3: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+< score   1 doc   4: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+< score   1 doc   5: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+< score   1 doc   6: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+< -----------------------------------------------
+< Query: breadth 
+< Matches 1 documents (ranked):
+< score   1 doc   3: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+< -----------------------------------------------
+< Query: home depth or first 
+< Matches 2 documents (ranked):
+< score   2 doc   5: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+< score   1 doc   3: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+< -----------------------------------------------
+< Query: for 
+< Matches 6 documents (ranked):
+< score   1 doc   1: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+< score   1 doc   2: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+< score   1 doc   3: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+< score   1 doc   4: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+< score   1 doc   5: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+< score   1 doc   6: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+< -----------------------------------------------
+< Query: tse or biology or this and this and for 
+< Matches 2 documents (ranked):
+< score   2 doc   1: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+< score   1 doc   6: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+< -----------------------------------------------
+< Query: gibraltar playground computational 
+< No documents match.
+< -----------------------------------------------
+< Query: the and first tse or page the 
+< Matches 1 documents (ranked):
+< score   1 doc   1: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+< -----------------------------------------------
+< Query: salutes and algorithm computational and uselessly saleable or the 
+< Matches 1 documents (ranked):
+< score   1 doc   1: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+< -----------------------------------------------
+< Query: shipyard or page algorithm page biology or tse 
+< Matches 1 documents (ranked):
+< score   1 doc   1: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+< -----------------------------------------------
+< Query: first or this page or this or this 
+< Matches 3 documents (ranked):
+< score   3 doc   1: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+< score   1 doc   3: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+< score   1 doc   5: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+< -----------------------------------------------
+< Query: breadth 
+< Matches 1 documents (ranked):
+< score   1 doc   3: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+< -----------------------------------------------
+< Query: for or breadth 
+< Matches 6 documents (ranked):
+< score   2 doc   3: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+< score   1 doc   1: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+< score   1 doc   2: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+< score   1 doc   4: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+< score   1 doc   5: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+< score   1 doc   6: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+< -----------------------------------------------
+< Query: the or first and algorithm 
+< Matches 1 documents (ranked):
+< score   1 doc   1: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+< -----------------------------------------------
+< Query: first or gingko or tse and arafat or playground computational 
+< Matches 2 documents (ranked):
+< score   1 doc   3: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+< score   1 doc   5: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+< -----------------------------------------------
+< Query: depth policyholders tse computational alexis 
+< No documents match.
+< -----------------------------------------------
+---
+> Query: here is tokenized query:
+> search and biology 
+> 
+> no documents match the query
+> 
+> 
+> 
+> Query: here is tokenized query:
+> tse or for breadth or the first 
+> 
+> docID: 1, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+> docID: 3, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+> 
+> 
+> 
+> Query: here is tokenized query:
+> tse this or biology 
+> 
+> docID: 1, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+> docID: 6, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+> 
+> 
+> 
+> Query: here is tokenized query:
+> answers search page or home or mississippians or computational 
+> 
+> docID: 1, score: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+> docID: 6, score: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+> docID: 2, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+> docID: 3, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+> docID: 4, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+> docID: 5, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+> 
+> 
+> 
+> Query: here is tokenized query:
+> breadth or eniac this page and computational or eniac 
+> 
+> docID: 3, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+> 
+> 
+> 
+> Query: here is tokenized query:
+> algorithm playground computational computational or for 
+> 
+> docID: 2, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+> docID: 1, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+> docID: 3, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+> docID: 4, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+> docID: 5, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+> docID: 6, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+> 
+> 
+> 
+> Query: here is tokenized query:
+> breadth 
+> 
+> docID: 3, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+> 
+> 
+> 
+> Query: here is tokenized query:
+> home depth or first 
+> 
+> docID: 5, score: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+> docID: 3, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+> 
+> 
+> 
+> Query: here is tokenized query:
+> for 
+> 
+> docID: 1, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+> docID: 2, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+> docID: 3, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+> docID: 4, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+> docID: 5, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+> docID: 6, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+> 
+> 
+> 
+> Query: here is tokenized query:
+> tse or biology or this and this and for 
+> 
+> docID: 1, score: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+> docID: 6, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+> 
+> 
+> 
+> Query: here is tokenized query:
+> gibraltar playground computational 
+> 
+> no documents match the query
+> 
+> 
+> 
+> Query: here is tokenized query:
+> the and first tse or page the 
+> 
+> no documents match the query
+> 
+> 
+> 
+> Query: here is tokenized query:
+> salutes and algorithm computational and uselessly saleable or the 
+> 
+> docID: 1, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+> 
+> 
+> 
+> Query: here is tokenized query:
+> shipyard or page algorithm page biology or tse 
+> 
+> docID: 1, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+> 
+> 
+> 
+> Query: here is tokenized query:
+> first or this page or this or this 
+> 
+> docID: 1, score: 3, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+> docID: 3, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+> docID: 5, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+> 
+> 
+> 
+> Query: here is tokenized query:
+> breadth 
+> 
+> docID: 3, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+> 
+> 
+> 
+> Query: here is tokenized query:
+> for or breadth 
+> 
+> docID: 3, score: 2, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+> docID: 1, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+> docID: 2, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+> docID: 4, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+> docID: 5, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+> docID: 6, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+> 
+> 
+> 
+> Query: here is tokenized query:
+> the or first and algorithm 
+> 
+> docID: 1, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+> 
+> 
+> 
+> Query: here is tokenized query:
+> first or gingko or tse and arafat or playground computational 
+> 
+> docID: 3, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+> docID: 5, score: 1, URL: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+> 
+> 
+> 
+> Query: here is tokenized query:
+> depth policyholders tse computational alexis 
+> 
+> no documents match the query
+> 
+> 
+> 
+> Query: 
+\ No newline at end of file
