@@ -2,10 +2,10 @@ Dartmouth
 dartmouth
 dartmouth
 lab
- Dartmouth College
- dartmouth college
- dartmouth and college
-    dartmouth    AND    College
+Dartmouth College
+dartmouth college
+dartmouth and college
+dartmouth AND College
 Dartmouth College AND computer science
 Dartmouth College or computer science
 Dartmouth AND College AND computer AND science
